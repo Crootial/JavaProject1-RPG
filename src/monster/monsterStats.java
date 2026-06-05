@@ -1,8 +1,9 @@
 package monster;
 
 public class monsterStats {
-    int health;
-    int strength;
-    int speed;
-    int evasive;
+    public int level;
+    public Double health;
+    public Double strength;
+    public Double speed;
+    public  Double evasive;
 }

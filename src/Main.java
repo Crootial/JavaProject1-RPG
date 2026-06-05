@@ -1,4 +1,6 @@
 
+import monster.monsters;
+
 import java.util.*;
 
 public class Main {
@@ -89,6 +91,7 @@ public class Main {
         switch(input) {
             case 1: // Shipwreck option
                 System.out.println("You decided on headings towards the shipwreck. With night setting, you think that it'll be a good place to camp for the night. ");
+                monsterEncounter();
                 break;
             case 2: // House option
                 System.out.println("You head towards the house.");
@@ -102,8 +105,9 @@ public class Main {
 
 
     public static void monsterEncounter() {
+        monsters activeMonster = null;
+        Random random = new Random();
 
-        int min = 1, max = 100;
 
         // Monster Value for spawn
         int monster_Ogre = 1;
@@ -111,7 +115,42 @@ public class Main {
         int monster_Direwolf = 3;
         int monster_Skeleton = 4;
         int monster_Goblin = 5;
-        int monster_MasterJerry = 100;
+        int monster_MasterJerry = 6;
+
+        int encounterRoll = random.nextInt(6);
+        Double healthRoll = random.nextDouble(10.00);
+        int levelRoll = random.nextInt(5) ;// placeholder until caps until player level
+        Double strengthRoll = random.nextDouble(10.00);
+        Double speedRoll = random.nextDouble(10.00);
+        Double evasiveRoll = random.nextDouble(10.00);
+
+        switch (encounterRoll) {
+            case 1 :
+                activeMonster = new monsters("Ogre",levelRoll,healthRoll,strengthRoll,speedRoll,evasiveRoll);
+                System.out.println ("A wild level "+levelRoll +" " + activeMonster.name + " has appeared!");
+                break;
+
+            case 2 :
+
+                break;
+
+            case 3 :
+
+                break;
+
+            case 4 :
+
+                break;
+
+            case 5 :
+
+                break;
+            case 6 :
+
+                break;
+        }
+
+
     }
 
     }
